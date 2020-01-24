@@ -7,8 +7,16 @@ namespace Laboratorio0_RenatoCabrera_1010617
 {
     public class RutaObjeto
     {
-        public List<Pelicula> Peliculas { get; set; }
-    }
+        private static RutaObjeto i = null; //i es el nombre que escogí para la Instancia
+
+        public static RutaObjeto Instance
+        {
+            get
+            {
+                if (i == null) i = new RutaObjeto();
+                return i;
+            }
+        }
 
     public class Pelicula
     {
