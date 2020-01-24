@@ -16,18 +16,17 @@ namespace Laboratorio0_RenatoCabrera_1010617.Controllers
     {
 
         [HttpGet]
-        public IEnumerable<Pelicula> Get()
+        public List<DatosPelicula> Get()
         {
-            return Peliculas
+            List<DatosPelicula> aux = new List<DatosPelicula>();
+            int CuentaPeliculas = RutaObjeto.Instancia.Peliculas.Count;
+
         }
 
         [HttpPost]
-        public string Test([FromBody]Pelicula peliculas)
+        public DatosPelicula Post([FromBody]DatosPelicula peliculas)
         {
-            var json = JsonConvert.SerializeObject(peliculas);
-            Console.Write("¡Hecho!");
             
-            return json;
         }
 
     }
