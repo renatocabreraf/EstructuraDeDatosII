@@ -10,13 +10,14 @@ namespace Laboratorio0_RenatoCabrera_1010617.Controllers
 {
     [Route("api/PeliculasController")]
     [ApiController]
+
     public class PeliculasController : ControllerBase
     {
 
         [HttpGet]
         public IEnumerable<Pelicula> Get()
         {
-            
+            return Peliculas
         }
 
         [HttpPost]
