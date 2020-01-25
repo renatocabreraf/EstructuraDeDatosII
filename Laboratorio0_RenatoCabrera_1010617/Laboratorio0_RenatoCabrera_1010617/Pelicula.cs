@@ -18,14 +18,14 @@ namespace Laboratorio0_RenatoCabrera_1010617
             }
         }
 
-        private static Pelicula[] peliculas = {
-            new Pelicula { ID = 1, Nombre = "Once Upon A Time... In Hollywood", Año = 2020, Director = "Quentin Tarantino"
+        private static DatosPelicula[] peliculas = {
+            new DatosPelicula { ID = 1, Nombre = "Once Upon A Time... In Hollywood", Año = 2020, Director = "Quentin Tarantino"
             }
         };
 
-        public Stack<Pelicula> Peliculas = new Stack<Pelicula>(peliculas);
+        public Stack<DatosPelicula> Peliculas = new Stack<DatosPelicula>(peliculas);
     }
-    public class Pelicula
+    public class DatosPelicula
     {
         public int ID {get; set;}
         public string Nombre { get; set; }
