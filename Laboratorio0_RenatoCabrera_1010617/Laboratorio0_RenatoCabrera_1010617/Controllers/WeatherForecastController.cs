@@ -6,20 +6,21 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Laboratorio0_RenatoCabrera_1010617.Models;
 
 
 namespace Laboratorio0_RenatoCabrera_1010617.Controllers
 {
-    [Route("api/PeliculasController")]
+    [Route("[controller]")]
     [ApiController]
 
-    public class PeliculasController : ControllerBase
+    public class WeatherForecastController : ControllerBase
     {
 
         [HttpGet]
-        public List<DatosPelicula> Get()
+        public List<WeatherForecast> Get()
         {
-            List<DatosPelicula> aux = new List<DatosPelicula>();
+            List<WeatherForecast> aux = new List<WeatherForecast>();
             int CuentaPeliculas = RutaObjeto.Instancia.Peliculas.Count;
 
             if(CuentaPeliculas > 0)
@@ -47,7 +48,7 @@ namespace Laboratorio0_RenatoCabrera_1010617.Controllers
 
         }
         [HttpGet("{id}", Name = "Get")]
-        public DatosPelicula Get(int id)
+        public WeatherForecast Get(int id)
         {
             if (id <= RutaObjeto.Instancia.Peliculas.Count())
                 return RutaObjeto.Instancia.Peliculas.ElementAt(id);
@@ -55,14 +56,14 @@ namespace Laboratorio0_RenatoCabrera_1010617.Controllers
             return null;
         }
 
-        private readonly ILogger<PeliculasController> _logger;
+        private readonly ILogger<WeatherForecastController> _logger;
 
-        public PeliculasController(ILogger<PeliculasController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
         [HttpPost]
-        public DatosPelicula Post([FromBody]DatosPelicula peliculas)
+        public WeatherForecast Post([FromBody]WeatherForecast peliculas)
         {
             if (peliculas.ID == 0)
                 peliculas.ID = RutaObjeto.Instancia.Peliculas.Count() + 1;
